@@ -149,4 +149,70 @@ function logindr(){
         }
         
 }
+
+function userd(){
+
+    if(isset($_GET["userid"])){
+        $link=connect_database();
+        $userid=$_GET["userid"];
+        $add = "SELECT * from `users` where aadhar='$userid' ";
+        $result=mysqli_query($link,$add);
+        if($result)
+        {
+            $row=mysqli_fetch_array($result);
+            $name=$row['name'];
+            $mobile=$row['mobile'];
+            $blood=$row['bloodgroup'];
+            $age=$row['age'];
+            if($blood==null)
+            {
+                echo '<div class="alert alert-danger">
+                <strong>Oops!</strong> Blood group details not available. Please Update Your Blood.
+              </div>';
+            }
+echo '
+<div class="col-xs-12 col-sm-9">
+							
+<div class="profile-user-info">
+    <div class="profile-info-row">
+        <div class="profile-info-name"> Name </div>
+
+        <div class="profile-info-value">
+            <span>'.$name.'</span>
+        </div>
+    </div>
+
+    <div class="profile-info-row">
+        <div class="profile-info-name"> Age </div>
+
+        <div class="profile-info-value">
+            <i class="fa fa-map-marker light-orange bigger-110"></i>
+            <span>'.$age.'</span>
+        </div>
+    </div>
+
+    <div class="profile-info-row">
+        <div class="profile-info-name"> Blood Group </div>
+
+        <div class="profile-info-value">
+            <span>'.$blood.'</span>
+        </div>
+    </div>
+
+    <div class="profile-info-row">
+        <div class="profile-info-name"> Mobile NO. </div>
+
+        <div class="profile-info-value">
+            <span>'.$mobile.'</span>
+        </div>
+    </div>
+    </div>
+    
+    ';}}
+    else{
+        echo '<script>alert("please login first");</script>';
+        header('Location:user_login.php');
+        
+    }
+}
 ?>
