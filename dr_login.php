@@ -341,7 +341,7 @@ function opensignup() {
       <button type="submit" name="submit" class="log-in" > THISONE </button>
    </div>
   <?php
-// signdr();
+signdr();
  ?> 
 <!--   other buttons -->
    <div class="other">

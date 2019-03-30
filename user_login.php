@@ -1,6 +1,6 @@
 <?php
+ob_start();
 include 'backend/functions.php';
-
 ?>
 <!doctype html>
 <html lang="en">
@@ -338,11 +338,11 @@ function opensignup() {
       <br>
 <!--        buttons -->
 <!--      button LogIn -->
-      <button type="submit" name="submit" class="log-in" > THISONE </button>
-   </div>
-  <?php
+      <button type="submit" name="submit" class="log-in" onclick=" <?php
 sign();
- ?> 
+ ?> "> THISONE </button>
+   </div>
+ 
 <!--   other buttons -->
    <div class="other">
 <!--      Forgot Password button-->
@@ -365,7 +365,7 @@ sign();
 <div id="login" style="width:450px; text-align:center;">
 <div >
 <!-- LOGN IN FORM by Omar Dsoky -->
-<form>
+<form method="POST">
    <!--   con = Container  for items in the form-->
    <div class="con">
    <!--     Start  header Content  -->
@@ -383,7 +383,7 @@ sign();
            <i class="fa fa-user-circle"></i>
          </span>
         <!--   user name Input-->
-         <input class="form-input" id="txt-input" type="text" placeholder="AadharNo." required>
+         <input class="form-input"  type="text" name="aadhar" placeholder="AadharNo." required>
      
       <br>
      
@@ -393,7 +393,7 @@ sign();
         <i class="fa fa-key"></i>
        </span>
       <!--   Password Input-->
-      <input class="form-input" type="password" placeholder="Password" id="pwd"  name="password" required>
+      <input class="form-input" type="password" placeholder="password" id="pwd"  name="password" required>
      
 <!--      Show/hide password  -->
      <span>
@@ -404,9 +404,11 @@ sign();
       <br>
 <!--        buttons -->
 <!--      button LogIn -->
-      <button class="log-in"> Log In </button>
+      <button class="log-in" name="submit" type="submit"> Log In </button>
    </div>
-  
+  <?php 
+    loginuser();
+  ?>
 <!--   other buttons -->
    <div class="other">
 <!--      Forgot Password button-->
