@@ -1,3 +1,6 @@
+<?php
+include 'backend/functions.php';
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -44,10 +47,10 @@
              
               <button type="button" class="btn btn-warning">Return to Profile</button>  <button type="button" class="btn btn-success">Appointments</button>
     <br>
-                <h2>Patient Details</h2>
+                <!-- <h2>Patient Details</h2> -->
             </div>
           <div class="col-sm-2"><a href="/users" class="pull-sright"><img title="profile image" class="img-circle img-responsive" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBG685vI07-3MsuqJxjCfzIabfFJJG-8yM-ppvjjNpD5QNtWNE4A"></a>
-            <h4> &nbsp; &nbsp; Hey, <span id="doctorName"> Doctor</span></h4>
+            <h4> &nbsp; &nbsp; Hey, <span id="doctorName">Ankit jain</span></h4>
     
             </div>
         </div>
@@ -56,11 +59,15 @@
              <div class="wrapper-inner">
             <label> <h3>Enter Unique Customer ID:</h3></label>
               <div class="form-group">
-                  <form>
-                      <input type="text" class="form-control" id="usr" name="uniqueID">
+                  <form method="GET">
+                      <input type="text" class="form-control" id="usr" name="userid" placeholder="Customer ID">
                       <br>
-                      <button type="submit" class="btn btn-primary">Submit</button>
+                      <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+                      <?php
+                  checkpatient();
+                  ?>
                   </form>
+                  
               </div>
                 </div>
             </div>

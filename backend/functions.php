@@ -131,7 +131,7 @@ function logindr(){
         {
             $row=mysqli_fetch_array($result);
             if($row['password']==$password){
-                header('Location: http://www.facbook.com');
+                header('Location: userid.php');
             // echo '<script>alert("done");</script>';
             // header( "Location : index.php");
         }
@@ -240,9 +240,41 @@ function showdruser(){
     <li class="list-group-item text-muted" contenteditable="false">Contact Details</li>
     <li class="list-group-item text-right"><span class="pull-left"><strong class="">Telephone Number: </strong></span>'.$mobile.'</li>
     ';
-    }}
+    }
+    else{
+        echo '<script>alert("SOrry");</script>';
+    }
+
+}
 else{
     header("Location : userId.php");
+}
+
+}
+
+function checkpatient(){
+    if(isset($_GET["submit"])){
+        $link=connect_database();
+        $userid=$_GET["userid"];
+        $add = "SELECT * from `users` where aadhar='$userid' ";
+        $result=mysqli_query($link,$add);
+        if($result)
+        {
+            header("Location:profile.php?userid=$userid");
+            // $row=mysqli_fetch_array($result);
+            // $name=$row['name'];
+            // $mobile=$row['mobile'];
+            // $blood=$row['bloodgroup'];
+            // $age=$row['age'];
+            // $email=$row['email'];
+    }
+    else{
+        echo '<script>alert("PLease Enter valid user id");</script>';
+    }
+        
+}
+else{
+    echo '<script>alert("PLease Enter valid user id");</script>';
 }
 
 }

@@ -365,45 +365,31 @@ signdr();
 <div id="login" style="width:450px; text-align:center;">
 <div >
 <!-- LOGN IN FORM by Omar Dsoky -->
-<form>
+<form method="POST">
    <!--   con = Container  for items in the form-->
    <div class="con">
    <!--     Start  header Content  -->
    <header class="head-form">
       <h2>Log In</h2>
       <!--     A welcome message or an explanation of the login form -->
-      <p>login here using your username and password</p>
+      <p> DRlogin here using your username and password</p>
    </header>
    <!--     End  header Content  -->
    <br>
    <div class="field-set">
-     
-      <!--   user name -->
-         <span class="input-item">
-           <i class="fa fa-user-circle"></i>
-         </span>
-        <!--   user name Input-->
          <input class="form-input" id="txt-input" type="text" name="medlic" placeholder="Medical License NUmber" required>
-     
       <br>
-     
-           <!--   Password -->
-     
-      <span class="input-item">
-        <i class="fa fa-key"></i>
-       </span>
-      <!--   Password Input-->
+      
       <input class="form-input" type="password" placeholder="Password" id="pwd"  name="password" required>
      
-<!--      Show/hide password  -->
-    
-     
-     
       <br>
-<!--        buttons -->
-<!--      button LogIn -->
-      <button class="log-in"> Log In </button>
+
+      <button class="log-in" type="submit" name="submit"> Log In </button>
+      <?php
+   logindr();
+   ?>
    </div>
+  
   
 <!--   other buttons -->
    <div class="other">
