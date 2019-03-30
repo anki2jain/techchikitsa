@@ -100,7 +100,7 @@ function loginuser(){
         {
             $row=mysqli_fetch_array($result);
             if($row['password']==$password){
-                header("Location: asd.html?userid=$aadhar");
+                header("Location: asd.php?userid=$aadhar");
             // echo '<script>alert("done");</script>';
             // header( "Location : index.php");
         }
