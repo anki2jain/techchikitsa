@@ -323,10 +323,10 @@ function opensignup() {
      <input class="form-input" name="mobile" type="text" placeholder="mobile" required>
       <!-- <input class="form-input" type="text" placeholder="Mobile Number" id="pwd"  name="mobile" required> -->
      <br>
-      <input class="form-input" type="text" placeholder="Age" id="pwd"  name="age" required>
-    <br> 
+      <input class="form-input" type="text" placeholder="Medical License Number" id="pwd"  name="medlic" required>
+    <!-- <br>  -->
            <!--   Password -->
-           <input class="form-input" type="password" placeholder="Aadhar Number" id="pwd"  name="aadhar" required>
+           <!-- <input class="form-input" type="password" placeholder="Aadhar Number" id="pwd"  name="aadhar" required> -->
            <br>
       <!--   Password Input-->
       <input class="form-input" type="password" placeholder="Password" id="pwd"  name="password" required>
@@ -341,7 +341,7 @@ function opensignup() {
       <button type="submit" name="submit" class="log-in" > THISONE </button>
    </div>
   <?php
-sign();
+// signdr();
  ?> 
 <!--   other buttons -->
    <div class="other">
@@ -383,7 +383,7 @@ sign();
            <i class="fa fa-user-circle"></i>
          </span>
         <!--   user name Input-->
-         <input class="form-input" id="txt-input" type="text" placeholder="AadharNo." required>
+         <input class="form-input" id="txt-input" type="text" name="medlic" placeholder="Medical License NUmber" required>
      
       <br>
      
@@ -396,9 +396,7 @@ sign();
       <input class="form-input" type="password" placeholder="Password" id="pwd"  name="password" required>
      
 <!--      Show/hide password  -->
-     <span>
-        <i class="fa fa-eye" aria-hidden="true"  type="button" id="eye"></i>
-     </span>
+    
      
      
       <br>
