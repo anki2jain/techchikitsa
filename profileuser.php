@@ -1486,7 +1486,7 @@ body{margin-top:20px;
 										<span>3 hours ago</span>
 									</div>
 								</div> -->
-							</div>
+							
 
 							<div class="hr hr-8 dotted"></div>
 

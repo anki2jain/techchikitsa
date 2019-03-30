@@ -215,4 +215,35 @@ echo '
         
     }
 }
+
+function showdruser(){
+    if(isset($_GET["userid"])){
+        $link=connect_database();
+        $userid=$_GET["userid"];
+        $add = "SELECT * from `users` where aadhar='$userid' ";
+        $result=mysqli_query($link,$add);
+        if($result)
+        {
+            $row=mysqli_fetch_array($result);
+            $name=$row['name'];
+            $mobile=$row['mobile'];
+            $blood=$row['bloodgroup'];
+            $age=$row['age'];
+            $email=$row['email'];
+    echo  '<li class="list-group-item text-muted" contenteditable="false">Profile</li>
+    <li class="list-group-item text-right"><span class="pull-left"><strong class="">Name: </strong></span>'.$name.'</li>
+    <li class="list-group-item text-right"><span class="pull-left"><strong class="">Address: </strong></span> Ermita, Manila</li>
+    <li class="list-group-item text-right"><span class="pull-left"><strong class="">Email: </strong></span>'.$email.'</li>
+    <li class="list-group-item text-right"><span class="pull-left"><strong class="">Birthday: </strong></span>3 May 1981</li>
+    <li class="list-group-item text-right"><span class="pull-left"><strong class="">Age: </strong></span>'.$age.'</li>
+    <li class="list-group-item text-right"><span class="pull-left"><strong class="">Sex: </strong></span>M</li>
+    <li class="list-group-item text-muted" contenteditable="false">Contact Details</li>
+    <li class="list-group-item text-right"><span class="pull-left"><strong class="">Telephone Number: </strong></span>'.$mobile.'</li>
+    ';
+    }}
+else{
+    header("Location : userId.php");
+}
+
+}
 ?>

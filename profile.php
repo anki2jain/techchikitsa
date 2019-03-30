@@ -1,3 +1,6 @@
+<?php
+include 'backend/functions.php';
+?>
 <html>
 <head>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
@@ -14,7 +17,7 @@
 <br>
             <h2>Patient Details</h2>
         </div>
-      <div class="col-sm-2"><a href="/users" class="pull-sright"><img title="profile image" class="img-circle img-responsive" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBG685vI07-3MsuqJxjCfzIabfFJJG-8yM-ppvjjNpD5QNtWNE4A"></a>
+      <div class="col-sm-2"><a href="/users" class="pull-srisght"><img title="profile image" class="img-circle img-responsive" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBG685vI07-3MsuqJxjCfzIabfFJJG-8yM-ppvjjNpD5QNtWNE4A"></a>
         <h4> &nbsp; &nbsp; Hey, <span id="doctorName"> Doctor</span></h4>
 
         </div>
@@ -24,17 +27,9 @@
         <div class="col-sm-3">
             <!--left col-->
             <ul class="list-group">
-                <li class="list-group-item text-muted" contenteditable="false">Profile</li>
-                <li class="list-group-item text-right"><span class="pull-left"><strong class="">Name: </strong></span> Joaquin Buenaobra</li>
-                <li class="list-group-item text-right"><span class="pull-left"><strong class="">Address: </strong></span> Ermita, Manila</li>
-                <li class="list-group-item text-right"><span class="pull-left"><strong class="">Email: </strong></span> "jwbuenaobra@hotmail.com"</li>
-                <li class="list-group-item text-right"><span class="pull-left"><strong class="">Birthday: </strong></span>3 May 1981</li>
-                <li class="list-group-item text-right"><span class="pull-left"><strong class="">Age: </strong></span>37</li>
-                <li class="list-group-item text-right"><span class="pull-left"><strong class="">Sex: </strong></span>M</li>
-                <li class="list-group-item text-muted" contenteditable="false">Contact Details</li>
-                <li class="list-group-item text-right"><span class="pull-left"><strong class="">Telephone Number: </strong></span>  514-1132</li>
-                <li class="list-group-item text-right"><span class="pull-left"><strong class="">Cellphone Number: </strong></span>09159092245</li>
-                
+                <?php
+                showdruser();
+                ?>                
             </ul>
            <div class="panel panel-default">
              
