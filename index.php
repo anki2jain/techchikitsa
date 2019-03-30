@@ -20,9 +20,11 @@
     box-sizing: border-box;
 }
 #signup{
+    margin-left:60px;
     diplay:none;
 }
 #login{
+    margin-left:60px;
     background-color:white;
     /* display:  */
 }
@@ -267,15 +269,12 @@ function opensignup() {
   </head>
   <body>
   <div class="btn-group btn-group-lg">
-  <button type="button" class="btn " onclick="openlogin()" style="background-color:teal">Log In</button>
+  <button type="button" class="btn " onclick="openlogin()" style="background-color:teal; color:white">Log In</button>
 
-  <button type="button" class="btn " onclick="opensignup()" style="background-color:teal">Sign Up</button>
+  <button type="button" class="btn " onclick="opensignup()" style="background-color:teal; color:white;">Sign Up</button>
   
-  <!-- <button type="button" class="btn btn-primary">Sony</button> -->
   <br>
-  <h4>hiii</h4>
-  <h4 style="display:none">hello</h4>
-  <h4 style="display:none">ddd</h4>
+
 </div>
 <div id="signup" style="width:450px; display:none;">
 <div >
