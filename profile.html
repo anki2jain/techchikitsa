@@ -1,85 +1,182 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-
-    <title>User Profile</title>
-  </head>
-  <body>
-      
-<!--NAVBAR-->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Navbar</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
+<html>
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container target">
+    <div class="row">
+        <div class="col-sm-10">
+             <h1 class="">DOCTOR</h1>
+         
+          <button type="button" class="btn btn-warning">Return to Profile</button>  <button type="button" class="btn btn-success">Appointments</button>
+<br>
+            <h2>Patient Details</h2>
         </div>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
-      </li>
-    </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
-  </div>
-</nav>
-<!-- NAVBAR ENDS -->
-      
-      <canvas id="myChart"></canvas>
+      <div class="col-sm-2"><a href="/users" class="pull-sright"><img title="profile image" class="img-circle img-responsive" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBG685vI07-3MsuqJxjCfzIabfFJJG-8yM-ppvjjNpD5QNtWNE4A"></a>
+        <h4> &nbsp; &nbsp; Hey, <span id="doctorName"> Doctor</span></h4>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script type = "text/javascript">
-        var ctx = document.getElementById('myChart').getContext('2d');
-        var chart = new Chart(ctx, {
-    // The type of chart we want to create
-        type: 'line',
+        </div>
+    </div>
+  <br>
+    <div class="row">
+        <div class="col-sm-3">
+            <!--left col-->
+            <ul class="list-group">
+                <li class="list-group-item text-muted" contenteditable="false">Profile</li>
+                <li class="list-group-item text-right"><span class="pull-left"><strong class="">Name: </strong></span> Joaquin Buenaobra</li>
+                <li class="list-group-item text-right"><span class="pull-left"><strong class="">Address: </strong></span> Ermita, Manila</li>
+                <li class="list-group-item text-right"><span class="pull-left"><strong class="">Email: </strong></span> "jwbuenaobra@hotmail.com"</li>
+                <li class="list-group-item text-right"><span class="pull-left"><strong class="">Birthday: </strong></span>3 May 1981</li>
+                <li class="list-group-item text-right"><span class="pull-left"><strong class="">Age: </strong></span>37</li>
+                <li class="list-group-item text-right"><span class="pull-left"><strong class="">Sex: </strong></span>M</li>
+                <li class="list-group-item text-muted" contenteditable="false">Contact Details</li>
+                <li class="list-group-item text-right"><span class="pull-left"><strong class="">Telephone Number: </strong></span>  514-1132</li>
+                <li class="list-group-item text-right"><span class="pull-left"><strong class="">Cellphone Number: </strong></span>09159092245</li>
+                
+            </ul>
+           <div class="panel panel-default">
+             
+             <div class="panel-heading">Reminders:
 
-    // The data for our dataset
-        data: {
-            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-            datasets: [{
-                label: 'My First dataset',
-                backgroundColor: 'white',
-                borderColor: 'rgb(255, 99, 132)',
-                data: [0, 10, 5, 2, 20, 30, 45]
-                }]
-            },
+                </div>
+               <div class="panel-body"><button type="button" class="btn btn-info">Upcoming Appointments<br><button type="button" class="btn btn-secondary">Health Status</button>
+                
 
-    // Configuration options go here
-        options: {}
-});
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">NOTIFICATIONS <i class="fa fa-link fa-1x"></i>
+
+                </div>
+                <div class="panel-body"><a href="http://bootply.com" class="">~Non-compliance to certain checklist items~</a>
+
+                </div>
+            </div>
+        </div>
+        <div class = "col-sm-6">
+                           <div class="row">
+        <div class="col-md-12">
+            <div class="panel-group" id="accordion">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"><span class="glyphicon glyphicon-file">
+                            </span>MEDICAL DETAILS</a>
+                        </h4>
+                    </div>
+                    <div id="collapseOne" class="panel-collapse collapse in">
+                        <div class="panel-body">
+                            <form method="post">
+                            <label> Weight (KG): </label> <input type="text" name="weight" class="form-control" placeholder="Title" required />
+                            <label> Height(meters): </label> <input type="text" name="height"class="form-control" placeholder="Title" required />
+                            <label> Blood Group: </label>
+                                                    <select class="form-control" id="sel1">
+                                                    <option name="A+">A+</option>
+                                                    <option name="B+">B+</option>
+                                                    <option name="AB+">AB+</option>
+                                                    <option name="O+">O+</option>
+                                                    <option name="A-">A-</option>
+                                                    <option name="B-">B-</option>
+                                                    <option name="AB-">AB-</option>
+                                                    <option name="O-">O-</option>
+                                </select>
+                                
+                            <button type="submit" class="btn btn-success">Upload</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo"><span class="glyphicon glyphicon-th-list">
+                            </span>&nbsp;&nbsp;UPLOAD MEDICAL REPORT</a>
+                        </h4>
+                    </div>
+                    <div id="collapseTwo" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <form class="form form-inline " role="form">
+                                         <label for="sel1">Select list:</label>
+                                                  <select class="form-control" id="sel1">
+                                                    <option>Medical Report</option>
+                                                    <option>Prescription</option>
+                                                  </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="btn-group">
+                                            <div class="form-group">
+                                
+                                        <input type="text" class="form-control" placeholder="Title" required />
+                                                
+                                                </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <textarea class="form-control" placeholder="Description" required></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="well well-sm well-primary">
+                                        <div class="form-group">
+                                        <button type="button" class="btn btn-success">Upload</button>
+                                            <a href="http://www.jquery2dotnet.com" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-floppy-disk">
+                                            </span>Save</a>
+                                        </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="collapseThree" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Title" required />
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Description" required />
+                                    </div>
+                                    <div class="form-group">
+                                        <textarea class="form-control" placeholder="Keywords" required></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="well well-sm well-primary">
+                                        <form class="form form-inline " role="form">
+                                        <div class="form-group">
+<!--
+                                            <a href="http://www.jquery2dotnet.com" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-floppy-disk">
+                                            </span>Save</a>
+-->
+                                        </div>
+                                         
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+            
+            </div>
+        </div>
         
-    </script>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  </body>
+    </div>
+</body>
 </html>
 
