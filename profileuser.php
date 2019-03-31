@@ -1575,9 +1575,12 @@ body{margin-top:20px;
                   }
                 },
                 data: {
-                  labels: ['M', 'Tu', 'W', 'Th', 'F', 'Sa', 'Su'],
-                datasets: [{
-                  data: [10, 30, 40, 11, 9, 17, 13],
+                    labels: ['1/jan', '6/jan', '14/jan', '254/jan', '7/feb', '17/feb', '15/march'],
+    datasets: [{
+      data: [19, 20, 18.3, 18, 21, 20.5, 18,20],
+                //     labels: ['M', 'Tu', 'W', 'Th', 'F', 'Sa', 'Su'],
+                // datasets: [{
+                //   data: [10, 30, 40, 11, 9, 17, 13,12],
                   tension: 0.0,
                   borderColor: 'rgb(255,190,70)',
                   backgroundColor: 'rgba(0,0,0,0.0)',

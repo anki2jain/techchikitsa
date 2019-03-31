@@ -63,17 +63,16 @@ include 'backend/functions.php';
                     </div>
                     <div id="collapseOne" class="panel-collapse collapse in">
                         <div class="panel-body">
-                            <form method="post">
+                            <form method="POST">
                             <label> Weight (KG): </label> <input type="text" name="weight" class="form-control" placeholder="Weight" required />
                             <label> Height(meters): </label> <input type="text" name="height"class="form-control" placeholder="Height" required />
                             <label> Blood Group: </label>
                             <input type="text" name="bloodpressure"class="form-control" placeholder="Blood Pressure" required />   
                                 
-                            <button type="submit" name="submit1" class="btn btn-success">Upload</button>
-                        <?php
-                        // uploadPre();
-                        ?>    
+                            <button type="submit" name="submit1" class="btn btn-success" >Upload</button>
+                          
                         </form>
+                        <?php  Uploadpre(); ?>
                         </div>
                     </div>
                 </div>
@@ -89,9 +88,9 @@ include 'backend/functions.php';
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <form class="form form-inline " role="form">
+                                        <form class="form form-inline " method="POST" role="form">
                                          <label for="sel1">Select list:</label>
-                                                  <select class="form-control" id="sel1">
+                                                  <select class="form-control" name="type" id="sel1">
                                                     <option>Medical Report</option>
                                                     <option>Prescription</option>
                                                   </select>
@@ -99,14 +98,14 @@ include 'backend/functions.php';
                                     <div class="form-group">
                                         <div class="btn-group">
                                             <div class="form-group">
-                                
-                                        <input type="text" class="form-control" placeholder="Title" required />
+                                <label for="">Upload Prescription/medicalreport</label>
+                                        <input type="file" name="pres" class="form-control" placeholder="Upload Prescription/medicalreport" required />
                                                 
                                                 </div>
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <textarea class="form-control" placeholder="Description" required></textarea>
+                                        <textarea class="form-control" name="desc" placeholder="Description" required></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -114,11 +113,15 @@ include 'backend/functions.php';
                                 <div class="col-md-12">
                                     <div class="well well-sm well-primary">
                                         <div class="form-group">
-                                        <button type="button" class="btn btn-success">Upload</button>
+                                        <button type="submit"  name="submit2" class="btn btn-success">Upload</button>
                                             <a href="http://www.jquery2dotnet.com" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-floppy-disk">
                                             </span>Save</a>
                                         </div>
                                         </form>
+
+                                        <?php
+                                        finaladd();
+                                        ?>
                                     </div>
                                 </div>
                             </div>

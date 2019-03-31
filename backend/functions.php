@@ -27,6 +27,8 @@ function sign(){
                 remark TEXT,
                 report TEXT,
                 height TEXT,
+                weight TEXT,
+                timestamp TIMESTAMP,
                 -- weight TEXT,
                 bloodpressure TEXT,
                 bloodgroup TEXT
@@ -357,6 +359,77 @@ else{
 
 }
 function Uploadpre(){
+    if(isset($_POST["submit1"])){
+        $link=connect_database();
+        $userid=$_GET['userid'];
+        $weight= $_POST['weight'];
+        $height= $_POST['height'];
+        $bloodpressure= $_POST['bloodpressure'];
+        $add = "INSERT INTO  `$userid` (height,weight,bloodpressure,prescription) VALUES ('$height','$weight','$bloodpressure','all documents/pres1.jpg')";
+        $result=mysqli_query($link,$add);
+        if($result)
+        {
+           echo '<script>alert("Medical Details Updated!");</script>';
+        }
+            else{
+                echo '<script>alert("Ooppps!Error occured");</script>';
+                echo "Error: " . $add . "<br>" . $link->error;
+                echo "Error: " . $result . "<br>" . $link->error;
+            }
+        }
+         else {
+        echo '<script> alert("user not exist!")</script>';
+        
+        // echo "Error: " . $addt . "<br>" . $link->error;
+        
+        echo "Error: " . $add . "<br>" . $link->error;
+        }     
+        }
+        
+function finaladd(){
 
+    if(isset($_POST["submit2"])){
+        $link=connect_database();
+        $type= $_POST['type'];
+        $brief= $_POST['desc'];
+        //$pic=$_POST['pic'];
+        // $q="show table where $product";
+        $dub ="SELECT * from `$product`";
+        $check =mysqli_query($link,$dub);
+        $filename1=$_FILES['pres']['name'];
+        $tempname1=$_FILES['pres']['tmp_name'];
+        $folder1 = "all documnts/".$filename1 ;
+        move_uploaded_file($tempname1,$folder1);
+        // if(mysqli_num_rows($check))
+        // {
+        //     echo '<div class="alert alert-danger"> product already exist</div>';
+        // }
+        // else 
+         
+            $add = "INSERT INTO `$userid` ($type,remark) VALUES ('$folder1','$brief')";
+        
+           
+        if (mysqli_query($link,$add))
+        {
+            echo '<script> alert("Done!")</script>'; 
+        }
+         else {
+        echo '<script> alert("Not Done!")</script>';
+        
+       
+        
+        echo "Error: " . $add . "<br>" . $link->error;
+        }
+        
+        
+        
+        
+        }
+        
+}
+function graph(){
+    echo " labels: ['1/jan', '6/jan', '14/jan', '254/jan, '7/feb', '17/feb', '15/march'],
+    datasets: [{
+      data: [19, 20, 18.3, 18, 21, 20.5, 18,20],";
 }
 ?>

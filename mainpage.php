@@ -51,7 +51,7 @@
 			</div>
 		
 				
-			<div class="carousel slide" id="carousel-608108">
+			<div class="carousel slide" style="padding-left:100px;" id="carousel-608108">
 				<ol class="carousel-indicators">
 					<li data-slide-to="0" data-target="#carousel-608108" class="active">
 					</li>
@@ -73,7 +73,7 @@
 						</div>
 					</div>
 					<div class="carousel-item">
-						<img class="d-block w-100" alt="Carousel Bootstrap Second" src="https://www.layoutit.com/img/sports-q-c-1600-500-2.jpg" />
+						<img class="d-block w-100" alt="Carousel Bootstrap Second" src="bg3.jpg" />
 						<div class="carousel-caption">
 							<h4>
 								Second Thumbnail label
@@ -84,7 +84,7 @@
 						</div>
 					</div>
 					<div class="carousel-item">
-						<img class="d-block w-100" alt="Carousel Bootstrap Third" src="https://www.layoutit.com/img/sports-q-c-1600-500-3.jpg" />
+						<img class="d-block w-100" alt="Carousel Bootstrap Third" src="bg4.jpg" />
 						<div class="carousel-caption">
 							<h4>
 								Third Thumbnail label
