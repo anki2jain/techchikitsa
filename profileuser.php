@@ -1600,9 +1600,16 @@ body{margin-top:20px;
         <div class="container-fluid abc">
                 <button type="button" class="btn btn-primary btn-lg">Click To Upload New Record</button>
             </div>
-            <div class="container-fluid bcd">
-                    <button type="button" class="btn btn-primary btn-lg">Click To See Previous Records</button>
+           <form method="GET">
+
+           <div class="container-fluid bcd">
+                <input type="text" name="userid" style="diplay:none" value="<?php echo $_GET['userid']; ?>">
+                    <button type="submit"  name ="submit" class="btn btn-primary btn-lg">Click To See Previous Records</button>
                 </div>
+           </form>
+                <?php
+                    drpres();
+                ?>
         
         <!-- <div class="container-fluid abc" > 
                 <div class="row">

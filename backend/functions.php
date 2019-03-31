@@ -100,7 +100,7 @@ function loginuser(){
         {
             $row=mysqli_fetch_array($result);
             if($row['password']==$password){
-                header("Location: asd.php?userid=$aadhar");
+                header("Location: profileuser.php?userid=$aadhar");
             // echo '<script>alert("done");</script>';
             // header( "Location : index.php");
         }
@@ -275,6 +275,67 @@ function checkpatient(){
 }
 else{
     echo '<script>alert("PLease Enter valid user id");</script>';
+}
+
+}
+
+function drpres(){
+   
+    if(isset($_GET["userid"])){
+
+     
+        $link=connect_database();
+        $userid=$_GET["userid"];
+        $add = "SELECT * from `$userid`";
+         echo "<script>alert($add);</script>";
+        $result=mysqli_query($link,$add);
+        if($result)
+        {
+
+        
+            while($row=mysqli_fetch_array($result)){
+
+                echo '<div class="card p-4 m-4">
+                <div class="card-body">
+                  <h5 class="text-center">Date:27/04/2019</h5>
+                  <div class="row">
+                    <div class="col-md-2">
+                      <img src="'.$row['prescription'].'" style="height:180px; width:180px" alt="">
+                    </div>
+                    <div class="col-md-8 pl-4 ml-4">
+                        <strong>Issue: '.$row['remark'].'</strong><br>
+                      <strong>Type:Prescription</strong>
+          <br>
+          <strong>Blood Pressure : '.$row['bloodpressure'].'</strong><br>
+          <strong>Weight:'.$row['weight'].'Kg</strong>
+          <br>
+                     <br>
+                     <a href="#">download prescription</a><br>
+                     <a href="http://localhost/techchikista/'.$row['prescription'].'">view prescription</a>
+                    </div>
+                     
+                  </div>
+                 
+                </div>
+              </div>
+        ';
+            }
+            echo 'done';
+            // header("Location:profile.php?userid=$userid");
+            // $row=mysqli_fetch_array($result);
+            // $name=$row['name'];
+            // $mobile=$row['mobile'];
+            // $blood=$row['bloodgroup'];
+            // $age=$row['age'];
+            // $email=$row['email'];
+    }
+    else{
+        echo '<script>alert($userid);</script>';
+    }
+        
+}
+else{
+    echo '<script>alert("PLease Enter valid user id $");</script>';
 }
 
 }
