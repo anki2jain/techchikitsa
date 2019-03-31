@@ -101,17 +101,7 @@ body{
                         </div>
                       <div id="drpr">
 
-                        <div class="card p-4 m-4">
-                          <div class="card-body">
-                            <h5 class="text-center">Date:27/04/2019</h5>
-                            <div class="row">
-                              <div class="col-md-2">
-                                <img src="bg1.jpg" style="height:180px; width:180px" alt="">
-                              </div>
-                              <div class="col-md-8 pl-4 ml-4">effected by mild fever and cold</div>
-                            </div>
-                          </div>
-                        </div>
+                      
                   <?php
                   drpres();
                   ?>

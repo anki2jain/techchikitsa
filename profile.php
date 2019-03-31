@@ -64,22 +64,16 @@ include 'backend/functions.php';
                     <div id="collapseOne" class="panel-collapse collapse in">
                         <div class="panel-body">
                             <form method="post">
-                            <label> Weight (KG): </label> <input type="text" name="weight" class="form-control" placeholder="Title" required />
-                            <label> Height(meters): </label> <input type="text" name="height"class="form-control" placeholder="Title" required />
+                            <label> Weight (KG): </label> <input type="text" name="weight" class="form-control" placeholder="Weight" required />
+                            <label> Height(meters): </label> <input type="text" name="height"class="form-control" placeholder="Height" required />
                             <label> Blood Group: </label>
-                                                    <select class="form-control" id="sel1">
-                                                    <option name="A+">A+</option>
-                                                    <option name="B+">B+</option>
-                                                    <option name="AB+">AB+</option>
-                                                    <option name="O+">O+</option>
-                                                    <option name="A-">A-</option>
-                                                    <option name="B-">B-</option>
-                                                    <option name="AB-">AB-</option>
-                                                    <option name="O-">O-</option>
-                                </select>
+                            <input type="text" name="bloodpressure"class="form-control" placeholder="Blood Pressure" required />   
                                 
-                            <button type="submit" class="btn btn-success">Upload</button>
-                            </form>
+                            <button type="submit" name="submit1" class="btn btn-success">Upload</button>
+                        <?php
+                        // uploadPre();
+                        ?>    
+                        </form>
                         </div>
                     </div>
                 </div>

@@ -1457,7 +1457,7 @@ body{margin-top:20px;
 									<div class="profile-info-name"> Age </div>
 
 									<div class="profile-info-value">
-										<i class="fa fa-map-marker light-orange bigger-110"></i>
+										
 										<span>19</span>
 										<span>Amsterdam</span>
 									</div>
@@ -1603,12 +1603,12 @@ body{margin-top:20px;
            <form method="GET">
 
            <div class="container-fluid bcd">
-                <input type="text" name="userid" style="diplay:none" value="<?php echo $_GET['userid']; ?>">
-                    <button type="submit"  name ="submit" class="btn btn-primary btn-lg">Click To See Previous Records</button>
+                <input type="text" name="userid" style="display:none" value="<?php echo $_GET['userid']; ?>">
+                    <button type="submit"  name ="submit" class="btn btn-primary btn-lg"><a style="color:white" href="preview.php?userid=<?php echo $_GET['userid']; ?>">Click To See Previous Records</a></button>
                 </div>
            </form>
                 <?php
-                    drpres();
+                    // drpres();
                 ?>
         
         <!-- <div class="container-fluid abc" > 

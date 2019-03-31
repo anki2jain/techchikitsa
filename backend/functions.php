@@ -129,6 +129,7 @@ function logindr(){
         $result=mysqli_query($link,$add);
         if($result)
         {
+            echo "<script>alert($password);</script>";
             $row=mysqli_fetch_array($result);
             if($row['password']==$password){
                 header('Location: userid.php');
@@ -136,7 +137,7 @@ function logindr(){
             // header( "Location : index.php");
         }
             else{
-                echo '<script>alert("Please check your password");</script>';
+                echo '<script>alert("Please check your password '.$password.'");</script>';
             }
         }
          else {
@@ -162,7 +163,7 @@ function userd(){
             $row=mysqli_fetch_array($result);
             $name=$row['name'];
             $mobile=$row['mobile'];
-            $blood=$row['bloodgroup'];
+            $blood=$row['blood_group'];
             $age=$row['age'];
             if($blood==null)
             {
@@ -186,7 +187,7 @@ echo '
         <div class="profile-info-name"> Age </div>
 
         <div class="profile-info-value">
-            <i class="fa fa-map-marker light-orange bigger-110"></i>
+           
             <span>'.$age.'</span>
         </div>
     </div>
@@ -234,7 +235,7 @@ function showdruser(){
     <li class="list-group-item text-right"><span class="pull-left"><strong class="">Name: </strong></span>'.$name.'</li>
     <li class="list-group-item text-right"><span class="pull-left"><strong class="">Address: </strong></span> Ermita, Manila</li>
     <li class="list-group-item text-right"><span class="pull-left"><strong class="">Email: </strong></span>'.$email.'</li>
-    <li class="list-group-item text-right"><span class="pull-left"><strong class="">Birthday: </strong></span>3 May 1981</li>
+    <li class="list-group-item text-right"><span class="pull-left"><strong class="">Blood Group: </strong></span>AB+</li>
     <li class="list-group-item text-right"><span class="pull-left"><strong class="">Age: </strong></span>'.$age.'</li>
     <li class="list-group-item text-right"><span class="pull-left"><strong class="">Sex: </strong></span>M</li>
     <li class="list-group-item text-muted" contenteditable="false">Contact Details</li>
@@ -294,17 +295,33 @@ function drpres(){
 
         
             while($row=mysqli_fetch_array($result)){
+                $timestamp = $row['timestamp'];
+                $timestamp = date_create_from_format('Y-m-d H:i:s', $timestamp);
+                $date =date_format($timestamp, 'd-m-Y');
 
+                // $tt="SELECT DATE('2003-12-31 01:02:03'); -> '2003-12-31'";
+                // $qu=mysqli_query($link,$tt);
+                // $date=date($row['timestamp']);
                 echo '<div class="card p-4 m-4">
                 <div class="card-body">
-                  <h5 class="text-center">Date:27/04/2019</h5>
+                  <h5 class="text-center">Date:'.$date.'</h5>
                   <div class="row">
                     <div class="col-md-2">
                       <img src="'.$row['prescription'].'" style="height:180px; width:180px" alt="">
                     </div>
                     <div class="col-md-8 pl-4 ml-4">
                         <strong>Issue: '.$row['remark'].'</strong><br>
-                      <strong>Type:Prescription</strong>
+                      <strong>Type:
+                      ';
+                      if($row['prescription']!=NULL)
+                      echo 'Prescription';
+                      else
+                      echo 'Report';
+
+                      echo '
+                      
+                      
+                      </strong>
           <br>
           <strong>Blood Pressure : '.$row['bloodpressure'].'</strong><br>
           <strong>Weight:'.$row['weight'].'Kg</strong>
@@ -337,6 +354,9 @@ function drpres(){
 else{
     echo '<script>alert("PLease Enter valid user id $");</script>';
 }
+
+}
+function Uploadpre(){
 
 }
 ?>
